@@ -6,7 +6,7 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-family: Hind, "Open Sans", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -17,15 +17,120 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
+$color1: #97D127;
+$color2: #134C4B;
+$color3: #34383C;
+$color4: #EFF2EF;
+$color5: #FFFFFF;
+
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    1024px;
+$breakpoint1: 960px;
+$breakpoint2: 768px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
+
+//--------------------------------
+// Navigation
+//--------------------------------
+nav i.fa {
+    font-size: 1.8em;
+    color: $color2;
+    margin-top: 10px;
+    &:hover {
+        color: $color1;
+    }
+}
+
+nav a {
+    &:not(:first-child) {
+        margin-left: 10px;
+    }
+}
+
+
+//--------------------------------
+// Landing page
+//--------------------------------
+#hero {
+    text-align: center;
+    background: $color5;
+    padding-bottom: 50px;
+}
+
+#logo {
+    margin-top: 120px;
+    width: 450px;
+}
+
+#logo g.st0 {
+    fill: #134C4B;
+}
+
+#logo circle.st2 {
+    fill: #97D127;
+}
+
+div.icons {
+    margin-top: 80px;
+}
+
+div.icons img {
+    width: 100px;
+    &:not(:first-child) {
+        margin-left: 60px;
+    }
+}
+
+.line {
+    fill: none;
+    stroke: $color1;
+    stroke-width: 1.0;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1800;
+    animation: dash 5s linear;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1800;
+    }
+}
+
+.circleOuter {
+    fill: $color2;
+    stroke: $color1;
+    stroke-width: 7.0;
+    stroke-opacity:0.3;
+}
+
+
+
+#contact {
+    padding: 0;
+    background: $color2;
+}
+
+#contact .wrapper .one-fourth-column {
+    position: absolute;
+    z-index: 100;
+    background: $color2;
+    padding: $spacing-unit;
+    color: $color4;
+}
+
+#map-canvas {
+    width: 100%;
+    height: 300px;
+    background-color: #CCC;
+  }
 
 
 
