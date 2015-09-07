@@ -13,15 +13,9 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$color1: #97D127;
-$color2: #134C4B;
-$color3: #34383C;
-$color4: #EFF2EF;
-$color5: #FFFFFF;
+$text-color:       #ffffff;
+$brand-color: #00aeef;
+$brand-color-dark: darken($brand-color, 5%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -31,7 +25,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 $content-width: 1024px;
 $breakpoint1: 960px;
 $breakpoint2: 768px;
-$breakpoint3: 480px;
+$breakpoint3: 600px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -48,12 +42,7 @@ html, body {
 // Navigation
 //--------------------------------
 nav i.fa {
-    font-size: 1.8em;
-    color: $color2;
-    margin-top: 10px;
-    &:hover {
-        color: $color1;
-    }
+    
 }
 
 nav a {
@@ -67,19 +56,14 @@ nav a {
 // Landing page
 //--------------------------------
 body#landing {
-    /*background: url('../assets/zoom-64599203-3-blur.jpg');*/
     background: url('../assets/element-background.png');
     background-size: cover;
-    background-position: bottom;
-}
-
-#splash .wrapper.nav {
-    text-align: left;
+    background-position: 50%;
 }
 
 #logo {
-    width: 160px;
-    float: left;
+    width: 350px;
+    margin-top: 100px;
 }
 
 .social {
@@ -94,22 +78,27 @@ body#landing {
 }
 
 .social span:hover {
-    color: #333333;
+    
 }
 
-#splash {
+.wrapper {
     text-align: center;
-    padding-bottom: 50px;
+    height: 100%;
+    margin-bottom: -100px;
 }
 
-#splash h1 {
-    margin: 0 auto;
-    margin-top: 15%;
+h1 {
+    margin: 0 auto !important;
+    margin-top: 8% !important;
     line-height: 130%;
     width: 75%;
-    color: #ffffff;
+    color: $text-color;
+    font-size: 1.5em !important;
 }
 
+/*---------------------------
+    Contact Form
+----------------------------*/
 
 .contact-form {
     margin-top: 50px;    
@@ -118,8 +107,9 @@ body#landing {
 .contact-form input {
     padding: 20px;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     font-family: $base-font-family;
+    font-weight: 300;
     box-sizing: border-box;
     
 }
@@ -129,8 +119,12 @@ input.email {
     max-width: 450px;
     min-width: 250px;
     background: rgba(255, 255, 255, 0.9);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    
+    /*border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;*/
 }
 
 input.email:focus {
@@ -139,16 +133,23 @@ input.email:focus {
     background: #ffffff;
 }
 
+.thank-you-text::-webkit-input-placeholder {
+    color: $brand-color;
+}
+
 input.submit {
-    background: #222222;
+    background: $brand-color;
     color: #ffffff;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    /*border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;*/
     width: 120px;
 }
 
 input.submit:hover {
-    background: #333333;
+    background: $brand-color-dark;
 }
 
 input.submit:focus {
@@ -160,7 +161,7 @@ input.submit:focus {
     position: relative;
 }
 
-.submit-wrapper span {
+.submit-wrapper span.icon_check {
     color: #ffffff;
     position: absolute;
     top: -5px;
@@ -169,6 +170,16 @@ input.submit:focus {
     display: none;
 }
 
+/*
+.submit-wrapper span.submit-label {
+    color: #ffffff;
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    font-size: 24px;
+    font-weight: 300;
+}*/
+
 @keyframes fadeInButton {
     from {color: rgba(255, 255, 255, 0.0);}
     to {color: rgba(255, 255, 255, 1.0);}
@@ -176,7 +187,7 @@ input.submit:focus {
 
 .fade-in-button {
     animation-name: fadeInButton;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 @keyframes fadeOutButton {
@@ -185,9 +196,31 @@ input.submit:focus {
 }
 .fade-out-button {
     animation-name: fadeInButton;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
+
+/*---------------------------
+    Footer
+----------------------------*/
+.social a {
+    color: $text-color;
+    
+    &:not(:first-child) {
+        margin-left: 10px;
+    }
+    
+    &:visited {
+        color: inherit;
+    }
+    
+    &:hover {
+        text-decoration: none;
+        color: $brand-color;
+    }
+    
+    
+}
 
 // Using media queries with like this:
 // @include media-query($on-palm) {
@@ -204,7 +237,7 @@ input.submit:focus {
 
 
 @media screen and (max-width: $breakpoint3) {
-    #splash h1 {
+    h1 {
         font-size: 24px;
         margin: 0 auto;
         margin-top: 20%;
@@ -216,10 +249,19 @@ input.submit:focus {
         width: 100% !important;
         border-radius: 0px !important;
     }
+    input.email {
+        max-width: none;
+    }
 
 }
 
-
+@media screen and (max-width: 1000px) {
+    body#landing {
+        background: url('../assets/element-background-cropped-1.png');
+        background-size: cover;
+        background-position: 50%;
+    }
+}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)

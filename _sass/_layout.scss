@@ -45,7 +45,6 @@
         position: absolute;
         top: 9px;
         right: 30px;
-        background-color: $background-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
@@ -92,8 +91,13 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.push {
+    height: 100px; /* height of footer */
 }
 
 .footer-heading {
@@ -163,6 +167,8 @@
  */
 .page-content {
     /*padding: $spacing-unit 0;*/
+    height: 100%;
+    //margin-bottom: -100px; // height of footer
 }
 
 .page-heading {
